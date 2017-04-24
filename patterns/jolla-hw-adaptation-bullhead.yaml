@@ -5,7 +5,6 @@ Description: Pattern with packages for bullhead HW Adaptation
 Name: jolla-hw-adaptation-bullhead
 Requires:
 - pattern:jolla-hw-adaptation-hybris
-- pattern:jolla-hw-adaptation-hybris-droid-vibrator
 - pattern:jolla-ui-configuration-bullhead
 
 - droid-hal-bullhead
@@ -20,13 +19,14 @@ Requires:
 - droid-hal-version-bullhead
 
 - pulseaudio-modules-droid
+- pulseaudio-modules-droid-glue
 # for audio recording to work:
 - qt5-qtmultimedia-plugin-mediaservice-gstmediacapture
 
 # These need to be per-device due to differing backends (fbdev, eglfs, hwc, ..?)
 - qt5-qtwayland-wayland_egl
 - qt5-qpa-hwcomposer-plugin
-- qtscenegraph-adaptation
+#- qtscenegraph-adaptation
 
 # GStreamer v0.10 multimedia support is being deprecated
 #- gstreamer0.10-droidcamsrc
@@ -40,6 +40,7 @@ Requires:
 - gstreamer1.0-plugins-base
 - gstreamer1.0-plugins-bad
 - nemo-gstreamer1.0-interfaces
+- gstreamer1.0-droid
 
 # This is needed for notification LEDs
 - mce-plugin-libhybris
@@ -68,11 +69,14 @@ Requires:
 - jolla-settings-layout
 
 # For devices with working cellular modem:
-#- pattern:jolla-sailfish-cellular-apps
-#- telepathy-ring
+- pattern:jolla-sailfish-cellular-apps
+- telepathy-ring
 
 # For devices where test_gps eventually gets a fix:
-#- geoclue-provider-hybris
+- geoclue-provider-hybris
+
+# vibrator
+- qt5-feedback-haptics-ffmemless
 
 Summary: Jolla HW Adaptation bullhead
 
