@@ -8,4 +8,7 @@
 # Community HW adaptations need this
 %define community_adaptation 1
 
+Provides: ofono-configs
+Provides: sensord-configs
+
 %include droid-configs-device/droid-configs.inc
