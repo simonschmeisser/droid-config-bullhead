@@ -18,6 +18,12 @@ Requires:
 - droid-config-bullhead-bluez4
 - droid-hal-version-bullhead
 
+# Sensors
+- hybris-libsensorfw-qt5
+
+# Needed for /dev/touchscreen symlink
+- qt5-plugin-generic-evdev
+
 - pulseaudio-modules-droid
 - pulseaudio-modules-droid-glue
 # for audio recording to work:
@@ -77,6 +83,9 @@ Requires:
 
 # vibrator
 - qt5-feedback-haptics-ffmemless
+
+# Flashlight
+- jolla-settings-system-flashlight
 
 Summary: Jolla HW Adaptation bullhead
 
