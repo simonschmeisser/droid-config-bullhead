@@ -4,9 +4,6 @@
 Description: Pattern with packages for bullhead HW Adaptation
 Name: jolla-hw-adaptation-bullhead
 Requires:
-- pattern:jolla-hw-adaptation-hybris
-- pattern:jolla-ui-configuration-bullhead
-
 - droid-hal-bullhead
 - droid-hal-bullhead-img-boot
 - droid-hal-bullhead-kernel-modules
@@ -15,8 +12,13 @@ Requires:
 - droid-config-bullhead-policy-settings
 - droid-config-bullhead-preinit-plugin
 - droid-config-bullhead-flashing
-- droid-config-bullhead-bluez4
+- droid-config-bullhead-bluez5
 - droid-hal-version-bullhead
+
+# Hybris packages
+- libhybris-libEGL
+- libhybris-libGLESv2
+- libhybris-libwayland-egl
 
 # Sensors
 - hybris-libsensorfw-qt5
@@ -24,25 +26,19 @@ Requires:
 # Vibra
 - ngfd-plugin-native-vibrator
 - qt5-feedback-haptics-native-vibrator
+- qt5-feedback-haptics-ffmemless
 
 # Needed for /dev/touchscreen symlink
 - qt5-plugin-generic-evdev
 
 - pulseaudio-modules-droid
-- pulseaudio-modules-droid-glue
 # for audio recording to work:
 - qt5-qtmultimedia-plugin-mediaservice-gstmediacapture
 
 # These need to be per-device due to differing backends (fbdev, eglfs, hwc, ..?)
 - qt5-qtwayland-wayland_egl
 - qt5-qpa-hwcomposer-plugin
-#- qtscenegraph-adaptation
-
-# GStreamer v0.10 multimedia support is being deprecated
-#- gstreamer0.10-droidcamsrc
-#- gstreamer0.10-omx
-#- gstreamer0.10-droideglsink
-#- nemo-qtmultimedia-plugins-gstvideotexturebackend
+- qtscenegraph-adaptation
 
 # Add GStreamer v1.0 as standard
 - gstreamer1.0
@@ -50,6 +46,7 @@ Requires:
 - gstreamer1.0-plugins-base
 - gstreamer1.0-plugins-bad
 - nemo-gstreamer1.0-interfaces
+# For devices with droidmedia and gst-droid built, see HADK pdf for more information
 - gstreamer1.0-droid
 
 # This is needed for notification LEDs
@@ -66,7 +63,7 @@ Requires:
 - usb-moded-mass-storage-android-config
 # working but careful with roaming!
 - usb-moded-connection-sharing-android-config
-# android diag mode only usable for certain android tools
+ android diag mode only usable for certain android tools
 - usb-moded-diag-mode-android
 
 # hammerhead, grouper, and maguro use this in scripts, so include for all
@@ -75,21 +72,12 @@ Requires:
 # enable device lock and allow to select untrusted software
 - jolla-devicelock-daemon-encsfa
 
-# Settings app needs this since update15
-- jolla-settings-layout
-
-# For devices with working cellular modem:
-- pattern:jolla-sailfish-cellular-apps
-- telepathy-ring
-
-# For devices where test_gps eventually gets a fix:
+# For GPS
 - geoclue-provider-hybris
 
-# vibrator
-- qt5-feedback-haptics-ffmemless
-
-# Flashlight
-- jolla-settings-system-flashlight
+# For FM radio on some QCOM devices
+#- qt5-qtmultimedia-plugin-mediaservice-irisradio
+#- jolla-mediaplayer-radio
 
 # For devices with SD Card
 #- sd-utils
