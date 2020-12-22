@@ -20,6 +20,13 @@ Requires:
 - libhybris-libGLESv2
 - libhybris-libwayland-egl
 
+# Bluetooth
+#-  bluebinder
+# disabled due to frequently crashing my device
+
+# Telephony
+ - ofono-ril-binder-plugin 
+
 # Sensors
 - hybris-libsensorfw-qt5
 
@@ -64,7 +71,7 @@ Requires:
 - usb-moded-mass-storage-android-config
 # working but careful with roaming!
 - usb-moded-connection-sharing-android-config
- android diag mode only usable for certain android tools
+# android diag mode only usable for certain android tools
 - usb-moded-diag-mode-android
 
 # hammerhead, grouper, and maguro use this in scripts, so include for all
